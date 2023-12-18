@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
-import {IERC721L} from "./IERC721L.sol";
+import {IERC721LimitedApproval} from "./IERC721LimitedApproval.sol";
 import {IERC721Receiver} from "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
-import {IERC721LMetadata} from "./IERC721LMetadata.sol";
+import {IERC721LimitedApprovalMetadata} from "./IERC721LimitedApprovalMetadata.sol";
 import {Context} from "@openzeppelin/contracts/utils/Context.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 import {IERC165, ERC165} from "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 import {IERC721Errors} from "@openzeppelin/contracts/interfaces/draft-IERC6093.sol";
 
-abstract contract ERC721L is Context, ERC165, IERC721L, IERC721LMetadata, IERC721Errors {
+abstract contract ERC721LimitedApproval is Context, ERC165, IERC721LimitedApproval, IERC721LimitedApprovalMetadata, IERC721Errors {
     using Strings for uint256;
 
     // Token name
@@ -39,8 +39,8 @@ abstract contract ERC721L is Context, ERC165, IERC721L, IERC721LMetadata, IERC72
      */
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165, IERC165) returns (bool) {
         return
-            interfaceId == type(IERC721L).interfaceId ||
-            interfaceId == type(IERC721LMetadata).interfaceId ||
+            interfaceId == type(IERC721LimitedApproval).interfaceId ||
+            interfaceId == type(IERC721LimitedApprovalMetadata).interfaceId ||
             super.supportsInterface(interfaceId);
     }
 

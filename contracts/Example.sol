@@ -1,7 +1,7 @@
-import "./ERC721L.sol";
+import "./ERC721LimitedApproval.sol";
 
-contract Example is ERC721L {
-    constructor() ERC721L("EXAMPLE", "EXAMPLE") {
+contract Example is ERC721LimitedApproval {
+    constructor() ERC721LimitedApproval("EXAMPLE", "EXAMPLE") {
         for (uint256 i = 1; i < 11; i++) {
             super._mint(msg.sender, i);
         }

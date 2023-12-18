@@ -1,5 +1,5 @@
 {
-  "name": "ERC721L",
+  "name": "erc721limitedapproval",
   "version": "0.0.1",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
